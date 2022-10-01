@@ -9,6 +9,7 @@ namespace CleanArchMvc.Domain.Entities
 {
     public sealed class Product : Entity
     {
+
         public string Name { get; private set; }
         public string Description { get; private set; }
         public decimal Price { get; private set; }
@@ -20,9 +21,9 @@ namespace CleanArchMvc.Domain.Entities
             ValidateDomain(name, description, price, stock, image);
         }
 
-        public Product(int id, string name, string description, decimal price, int stock, string image, int categoryId, Category category)
+        public Product(int id, string name, string description, decimal price, int stock, string image)
         {
-            DomainExceptionValidation.When(id < 0, "Ivalid id value.");
+            DomainExceptionValidation.When(id < 0, "Invalid id value.");
             Id = id;
             ValidateDomain(name, description, price, stock, image);
         }
@@ -50,6 +51,7 @@ namespace CleanArchMvc.Domain.Entities
 
             DomainExceptionValidation.When(image.Length > 250, "Invalid image name, too long, maximum 250 characters");
 
+            
             Name = name;
             Description = description;
             Price = price;
