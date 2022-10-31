@@ -12,6 +12,7 @@ namespace CleanArchMvc.WebUI.Controllers
             _categoryService = categoryService;
         }
 
+        //testando o get 
         [HttpGet]
         
         public async Task<IActionResult> Index()
