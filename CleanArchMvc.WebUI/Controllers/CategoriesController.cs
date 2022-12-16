@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CleanArchMvc.WebUI.Controllers
 {
-    [Authorize]
+    
     public class CategoriesController : Controller
     {
         private readonly ICategoryService _categoryService;
